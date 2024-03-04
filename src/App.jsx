@@ -4,17 +4,19 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
-import LayOut from "./componants/shared/LayOut";
-
-
-
+import RootLayout from "./componants/shared/RootLayout";
+import DashBoard from "./componants/DashBoard";
+import Products from "./componants/Products";
 
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route  path='/' element={<LayOut/>} />
+         <Route path="/" element={<RootLayout/>}>
+          <Route path="/dashboard" element={<DashBoard/>}/>
+          <Route path="/products" element={<Products/>}/>
+        </Route>
       </>
     )
   )
